@@ -1,0 +1,21 @@
+<br/>
+
+<div class="content">
+  <div class="col-xs-12 col-sm-6">
+    {{#each model.players as |player|}}
+      <div class="col-xs-6">
+        {{#link-to "scoreboard.score" player.id}}
+          {{player.name}} - {{player.score}} <br/>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="col-xs-12">
+  {{#link-to "match"}}Record New Match{{/link-to}}
+  </div>
+</div>
+
+{{outlet}}
+
+
+<br/>

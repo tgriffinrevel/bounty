@@ -1,11 +1,13 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'bounty',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    token: '',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,7 +22,14 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+
     }
+  };
+  ENV['simple-auth'] = {
+    store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:custom',
+    crossOriginWhitelist: ['http://icarus.cs.weber.edu'],
+    routeAfterAuthentication: '/match'
   };
 
   if (environment === 'development') {

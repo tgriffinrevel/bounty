@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('scoreboard', function(){
+    this.route('score', {path: '/:player_id'});
+  });
+  this.route('match');
+  this.route('login');
 });
 
 export default Router;
