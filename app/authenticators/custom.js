@@ -12,7 +12,7 @@ export default BaseAuthenticator.extend({
       } else {
         reject();
       }
-    })
+    });
   },
   session: Ember.inject.service('session'),
   authenticate: function (options) {
@@ -40,8 +40,8 @@ export default BaseAuthenticator.extend({
             reject(response);
           });
         }
-      )
-    })
+      );
+    });
   },
 
   invalidate: function () {
