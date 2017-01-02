@@ -14,9 +14,13 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model(){
     const store = this.get('store');
     let match = store.newMatch();
+    let league = store.find('league', 47);
+    let players = store.peekAll('player');
+    console.log(players);
+
     let p1_list = store.getPlayers();
     return {
-      "p1_list": p1_list,
+      "p1_list": players,
       "match": match,
       "result": null,
     };

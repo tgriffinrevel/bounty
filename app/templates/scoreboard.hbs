@@ -1,11 +1,13 @@
 <br/>
 
 <div class="content">
-  <div class="col-xs-12 col-sm-6">
+  <div class="col-xs-12">
     {{#each model.players as |player|}}
-      <div class="col-xs-6">
+      <div class="col-xs-6 col-sm-4">
+
         {{#link-to "scoreboard.score" player.id}}
           {{player.name}} - {{player.score}} <br/>
+          {{player.inspect}}
         {{/link-to}}
       </div>
     {{/each}}

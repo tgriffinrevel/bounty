@@ -7,19 +7,17 @@ let players = [
   ];
 
 export default DS.Store.extend({
+  players: [],
   setPlayers(player_list){
     players = player_list;
   },
 
   getPlayers(){
-    let store = this;
-
-    return players
-
+    return players;
   },
 
   getPlayerById(id){
-    return players.findBy('id', parseInt(id));
+    // return peekRecord('player', id)
   },
 
   newMatch(){
@@ -31,7 +29,7 @@ export default DS.Store.extend({
   },
 
   saveMatch(match){
-
+    console.log(match);
   }
 
 });
